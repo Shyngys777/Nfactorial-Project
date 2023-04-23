@@ -1,0 +1,37 @@
+1 - Main - createWindow
+
+2 - GameBoard extends JPanel implements MouseListener - Constructor
+	addMouseListener(this)
+	Override paintComponent
+	
+3 - Main - addGameBoard
+
+4 - ResourceManager
+	BufferedImage img = null;
+	try {
+		img = ImageIO.read(new File("src/nico/resources/textures/"+fileName+".png"));
+	} catch (IOException e) {
+		System.out.println("[ResourceManager]: Exception when loading src/nico/resources/textures/"+fileName+".png");
+	}
+	return img;
+	
+5 - Map Generator - drawTiles(Graphics2d, int, int)
+	for loop to draw
+	called in GameBoard.paintComponent(Graphics)
+
+6 - Tile class fields
+	enum status
+		unknown - draw regular tile
+		flagged - draw flagged tile
+		opened - draw content
+	enum content
+		empty, mine, 1, 2, 3, 4, 5, 6, 7, 8
+		
+7 - Reference
+	static final int minesCount
+	placeMines method
+		places mines at random position
+
+8 - MapGenerator
+	draw tiles content
+	
